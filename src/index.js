@@ -7,6 +7,17 @@ import logger from 'redux-logger';
 
 //just creating skeletons of what is needed
 
+// // 1. import `ChakraProvider` component
+// import { ChakraProvider } from "@chakra-ui/react"
+// function App({ Component }) {
+//     // 2. Use at the root of your app
+//     return (
+//         <ChakraProvider>
+//             <Component />
+//         </ChakraProvider>
+//     )
+// }
+
 
 const feelingReducer = (state = '0', action) => {
     if (action.type === 'SEND_FORM1')
