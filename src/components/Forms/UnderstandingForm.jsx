@@ -32,7 +32,7 @@ function UnderstandingForm() {
     }, []);
 
     function nextButton() {
-        history.push('/3');
+        history.push('/support');
     }
 
 

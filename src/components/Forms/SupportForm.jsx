@@ -32,7 +32,7 @@ function SupportForm() {
     }, []);
 
     function nextButton() {
-        history.push('/4');
+        history.push('/comments');
     }
 
     return (

@@ -37,7 +37,7 @@ function FeelingForm() {
     }, []);
 
     function nextButton() {
-        history.push('/2');
+        history.push('/understanding');
     }
 
 
