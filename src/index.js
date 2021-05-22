@@ -15,19 +15,28 @@ const feelingReducer = (state = '0', action) => {
 }
 
 const understandReducer = (state = 0, action) => {
+    if (action.type === 'SEND_FORM2')
+        return action.payload;
+
     return state;
 }
 
 const supportReducer = (state = 0, action) => {
+    if (action.type === 'SEND_FORM3')
+        return action.payload;
+
     return state;
 }
 
 const commentReducer = (state = '', action) => {
+    if (action.type === 'SEND_FORM4')
+        return action.payload;
+
     return state;
 }
 
 // const reviewReducer = (state = {}, action) => {
-//     if (action.type === 'SUBMIT_REVIEW') {
+//     if (action.type === 'DISPLAY_REVIEW') {
 //         return action.payload;
 //     }
 //     let newState = [...state, action.payload];
