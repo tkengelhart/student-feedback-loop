@@ -40,9 +40,9 @@ function App() {
           <p>This is where Comments should go</p>
 
           <CommentsForm />
-        </Route>  <Route path='/5'>
+        </Route>
+        <Route path='/review'>
           <p>This is where Review should go</p>
-
           <Review />
         </Route>
         <Route path='/submit'>

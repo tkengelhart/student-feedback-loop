@@ -17,7 +17,7 @@ function SupportForm() {
         }).then(response => {
             console.log(response.data);
             dispatch({
-                type: 'SEND_FORM2',
+                type: 'SEND_FORM3',
                 payload: response.data
             })
 
@@ -32,9 +32,8 @@ function SupportForm() {
     }, []);
 
     function nextButton() {
-        history.push('/3');
+        history.push('/4');
     }
-
 
     return (
 
