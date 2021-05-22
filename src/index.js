@@ -4,31 +4,52 @@ import App from './components/App/App';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
-import registerServiceWorker from './registerServiceWorker';
-
 
 //just creating skeletons of what is needed
-const feelingReducer = (state = 0, action) => {
-    if (action.type === 'SUBMIT_FEELING') return action.payload;
+
+
+const feelingReducer = (state = '0', action) => {
+    if (action.type === 'SEND_FORM1')
+        return action.payload;
     return state;
-};
+}
+
 const understandReducer = (state = 0, action) => {
-    if (action.type === 'SUBMIT_UNDERSTAND') return action.payload;
     return state;
-}; const supportReducer = (state = 0, action) => {
-    if (action.type === 'SUBMIT_SUPPORT') return action.payload;
+}
+
+const supportReducer = (state = 0, action) => {
     return state;
-}; const commentReducer = (state = 0, action) => {
-    if (action.type === 'SUBMIT_COMMENT') return action.payload;
+}
+
+const commentReducer = (state = '', action) => {
     return state;
-};
+}
+
+// const reviewReducer = (state = {}, action) => {
+//     if (action.type === 'SUBMIT_REVIEW') {
+//         return action.payload;
+//     }
+//     let newState = [...state, action.payload];
+//     return newState;
+// }
+
+// const submissionReducer = (state = [''], action) => {
+//     if (action.type === 'SUBMIT') {
+//         return action.payload;
+//     }
+//     applyMiddleware(logger)
+// }
+
 
 const storeInstance = createStore(
     combineReducers({
         feelingReducer,
         understandReducer,
         supportReducer,
-        commentReducer
+        commentReducer,
+        // reviewReducer,
+        // submissionReducer
     })
 )
 
@@ -51,3 +72,4 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 );
+
