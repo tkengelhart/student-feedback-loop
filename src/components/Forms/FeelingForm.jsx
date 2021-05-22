@@ -61,4 +61,4 @@ function FeelingForm() {
     );
 }
 
-export default FeelingForm1;
+export default FeelingForm;

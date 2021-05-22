@@ -56,7 +56,7 @@ function UnderstandingForm() {
     );
 }
 
-export default UnderstandingForm2;
+export default UnderstandingForm;
 
 
 

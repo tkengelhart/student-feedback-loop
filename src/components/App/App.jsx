@@ -1,12 +1,12 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import CommentsForm4 from '../Forms/CommentsForm4';
-import FeelingForm1 from '../Forms/FeelingForm1';
+import CommentsForm from '../Forms/CommentsForm';
+import FeelingForm from '../Forms/FeelingForm';
 import Submission from '../Forms/Submission';
-import SupportForm3 from '../Forms/SupportForm3';
-import UnderstandingForm2 from '../Forms/UnderstandingForm2';
-import Review from '../Review/Review';
+import SupportForm from '../Forms/SupportForm';
+import UnderstandingForm from '../Forms/UnderstandingForm';
+import Review from '../Forms/Review';
 import { HashRouter as Router, Route, Switch, Link, NavLink } from 'react-router-dom';
 // import { useState } from 'react';
 // import { useSelector } from 'react-redux';
@@ -25,21 +25,21 @@ function App() {
 
         <Route path='/'>
           <p>This is where Feelings should go</p>
-          <FeelingForm1 />
+          <FeelingForm />
         </Route>
         <Route path='/2'>
           <p>This is where Understanding should go</p>
 
-          <UnderstandingForm2 />
+          <UnderstandingForm />
         </Route>
         <Route path='/3'>
           <p>This is where Support should go</p>
 
-          <SupportForm3 />
+          <SupportForm />
         </Route>  <Route path='/4'>
           <p>This is where Comments should go</p>
 
-          <CommentsForm4 />
+          <CommentsForm />
         </Route>  <Route path='/5'>
           <p>This is where Review should go</p>
 
