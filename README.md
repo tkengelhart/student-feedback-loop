@@ -53,7 +53,7 @@ The `Comments` step does not need to be validated, an empty value is okay.
 
 [ X ] When the submit button is clicked, save the submission in the database. The user should see a submission success page. 
 
-[   ] They can then click the button to take a new survey, which needs to reset all the data and go back to the first step.
+[ X ] They can then click the button to take a new survey, which needs to reset all the data and go back to the first step.
 
 ![understanding](wireframes/page-five.png)
 
