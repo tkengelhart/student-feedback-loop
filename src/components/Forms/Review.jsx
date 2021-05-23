@@ -50,10 +50,10 @@ function Review() {
 
     return (
         <div className="review">
-            <p>Feeling: {feelingScore}</p>
-            <p>Understanding: {understandScore}</p>
-            <p>Support: {supportScore}</p>
-            <p>Comments:{commentsScore}</p>
+            <h2>Feeling: {feelingScore}</h2>
+            <h2>Understanding: {understandScore}</h2>
+            <h2>Support: {supportScore}</h2>
+            <h2>Comments:{commentsScore}</h2>
             <button onClick={(event) => submitFeedback(event)}>Submit</button>
 
 

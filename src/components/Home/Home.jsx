@@ -13,13 +13,8 @@ function Home() {
 
     return (
         <>
-
-            <header className='App-header'>
-                <h1 className='App-title'>Feedback!</h1>
-                <h4>Don't forget it!</h4>
-            </header>
             <div>
-                <h2>Please press <button onClick={(event) => startButton(event)}>START</button> to begin!</h2>
+                <h2>Please press start</h2><button onClick={(event) => startButton(event)}>START</button>
             </div>
         </>
     )
