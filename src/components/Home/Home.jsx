@@ -17,8 +17,8 @@ function Home() {
             </header>
             <div>
 
-                Please press <button onClick={(event) => startButton(event)}>START</button> to begin!
-        </div>
+                <h2>Please press <button onClick={(event) => startButton(event)}>START</button> to begin!</h2>
+            </div>
         </>
     )
 }

@@ -4,6 +4,8 @@ import App from './components/App/App';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
+import registerServiceWorker from './registerServiceWorker';
+
 
 //just creating skeletons of what is needed
 
@@ -18,32 +20,36 @@ import logger from 'redux-logger';
 //     )
 // }
 
-
-const feelingReducer = (state = '0', action) => {
-    if (action.type === 'SEND_FORM1')
-        return action.payload;
-    return state;
+const feelingReducer = (state = 0, action) => {
+    let newState = state;
+    if (action.type === 'ADD_FEELING') {
+        newState = action.payload;
+    }
+    return newState;
 }
 
 const understandReducer = (state = 0, action) => {
-    if (action.type === 'SEND_FORM2')
-        return action.payload;
-
-    return state;
+    let newState = state;
+    if (action.type === 'ADD_UNDERSTAND') {
+        newState = action.payload;
+    }
+    return newState;
 }
 
 const supportReducer = (state = 0, action) => {
-    if (action.type === 'SEND_FORM3')
-        return action.payload;
-
-    return state;
+    let newState = state;
+    if (action.type === 'ADD_SUPPORT') {
+        let newState = action.payload;
+    }
+    return newState;
 }
 
 const commentReducer = (state = '', action) => {
-    if (action.type === 'SEND_FORM4')
-        return action.payload;
-
-    return state;
+    let newState = state;
+    if (action.type === 'ADD_COMMENTS') {
+        let newState = action.payload;
+    }
+    return newState;
 }
 
 // const reviewReducer = (state = {}, action) => {
@@ -70,15 +76,10 @@ const storeInstance = createStore(
         commentReducer,
         // reviewReducer,
         // submissionReducer
-    })
-)
+    }),
+    applyMiddleware(logger)
 
-
-
-
-
-
-
+);
 
 
 
@@ -92,4 +93,5 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 );
+registerServiceWorker();
 

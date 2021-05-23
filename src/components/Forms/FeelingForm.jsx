@@ -4,57 +4,41 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import '../App/App.css';
 
-
-
-
-function FeelingForm() {
+function FeelingForm(props) {
     const dispatch = useDispatch();
     const history = useHistory();
-    const [value, setValue] = useState(0);
+
+    const [feeling, setFeeling] = useState(0);
     const form1 = useSelector(store => store.feelingReducer);
 
+    function feelingResponse(event) {
+        event.preventDefault();
 
-
-    function sendForm1() {
-        axios({
-            method: 'POST',
-            url: '/'
-        }).then(response => {
-            console.log(response.data);
-            dispatch({
-                type: 'SEND_FORM1',
-                payload: response.data
-            })
-
-        }).catch(error => {
-            console.log('error on POST', error);
+        dispatch({
+            type: 'ADD_FEELING',
+            payload: feeling,
         });
-    }
 
-    useEffect(() => {
-        console.log('in useEffect');
-        sendForm1();
-    }, []);
-
-    function nextButton() {
         history.push('/understanding');
-    }
 
+    }
 
     return (
 
         <div>
-            <form onSubmit={(event) => nextButton(event)}>
+            <h1>How are you feeling today?</h1>
+            <h3>1 being the worst, 5 being the best</h3>
+            <form onSubmit={(event) => feelingResponse(event)}>
                 <select
-                    name='Value'
-                    onChange={(event) => setValue(event.target.value)}>
+                    onChange={(event) => setFeeling(event.target.value)}>
                     <option value={'1'}>1</option>
                     <option value={'2'}>2</option>
                     <option value={'3'}>3</option>
                     <option value={'4'}>4</option>
                     <option value={'5'}>5</option>
+
                 </select>
-                <button> Next </button>
+                <button>Next</button>
 
             </form >
         </div >

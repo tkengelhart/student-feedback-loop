@@ -1,51 +1,42 @@
-import { useSelector } from 'react-redux';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
+
 function Review() {
-    const [feedback, setFeedback] = useState([]);
-    useEffect(() => {
-        console.log('in useEffect');
-        reviewDisplay();
-    }, []);
 
-    const reviewDisplay = () => {
-        console.log('Getting Review');
-        axios({
-            method: 'GET',
-            url: '/',
-        }).then((response) => {
-            setFeedback(response.data);
-            console.log(response.data);
-        });
-    };
+    // const feelingScore = useSelector(store => store.feelingReducer);
+    // const understandScore = useSelector(store => store.understandReducer);
+    // const supportScore = useSelector(store => store.supportReducer);
+    // const commentsScore = useSelector(store => store.commentsReducer);
+
+
+
+
+    //we can't use a review of feedback from table, because nothing is posted yet
+    //we can use this axios call to post after we validate...for now just make sure post is working
+
     return (
-        <>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Feeling</th>
-                        <th>Understanding</th>
-                        <th>Support</th>
-                        <th>Comments</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {feedback.map((feedback) => (
+        <div>
+            <p>Feeling: Score goes here</p>
+            {/* <p>Understanding: {stateunderstandingReducer}</p>
+            <p>Support: {supportReducer}</p>
+            <p>Comments:{commentsReducer}</p> */}
 
-                        <tr key={feedback.feeling}>
-                            <td>{feedback.understanding}</td>
-                            <td>{feedback.support}</td>
-                            <td>{feedback.comments}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </>
+        </div>
 
 
     );
 }
+const reviewDisplay = () => {
+    console.log('Posting Feedback');
+    axios({
+        method: 'POST',
+        url: '/',
+    }).then((response) => {
+        setFeedback(response.data);
+        console.log(response.data);
+    });
+};
 
 export default Review;

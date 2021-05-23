@@ -7,43 +7,33 @@ import '../App/App.css';
 function CommentsForm() {
     const dispatch = useDispatch();
     const history = useHistory();
-    const [value, setValue] = useState(0);
-    const form4 = useSelector(store => store.commentsReducer);
+    const [comments, setComments] = useState(0);
+    const form1 = useSelector(store => store.feelingReducer);
 
-    function sendForm4() {
-        axios({
-            method: 'POST',
-            url: '/'
-        }).then(response => {
-            console.log(response.data);
-            dispatch({
-                type: 'SEND_FORM4',
-                payload: response.data
-            })
-
-        }).catch(error => {
-            console.log('error on POST', error);
-        });
+    const commentsResponse = (event) => {
+        setComments(event.target.value);
     }
+    // event.preventDefault();
 
-    useEffect(() => {
-        console.log('in useEffect');
-        sendForm4();
-    }, []);
+    dispatch({
+        type: 'ADD_COMMENTS',
+        payload: comments
+    });
+    history.push('/review');
 
-    function nextButton() {
-        history.push('/review');
-    }
+
     return (
 
         <div>
-            <form onSubmit={(event) => nextButton(event)}>
+            <h1>Any comments you want to leave?</h1>
+            <form onSubmit={commentsResponse}>
                 <input
                     type='text'
                     name='Comments'
-                    onChange={(event) => setValue(event.target.value)}>
+                    onChange={(event) => setComments(event.target.value)}>
                 </input>
-                <button> Next</button>
+                <button type="submit">Next</button>
+                <h2>Please press Next button to see a review of your feedback before submitting</h2>
 
             </form >
 

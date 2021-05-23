@@ -7,48 +7,37 @@ import '../App/App.css';
 function SupportForm() {
     const dispatch = useDispatch();
     const history = useHistory();
-    const [value, setValue] = useState(0);
-    const form3 = useSelector(store => store.supportReducer);
+    const [support, setSupport] = useState(0);
+    const form1 = useSelector(store => store.feelingReducer);
 
-    function sendForm3() {
-        axios({
-            method: 'POST',
-            url: '/'
-        }).then(response => {
-            console.log(response.data);
-            dispatch({
-                type: 'SEND_FORM3',
-                payload: response.data
-            })
-
-        }).catch(error => {
-            console.log('error on POST', error);
-        });
+    const supportResponse = (event) => {
+        setSupport(event.target.value);
     }
+    // event.preventDefault();
 
-    useEffect(() => {
-        console.log('in useEffect');
-        sendForm3();
-    }, []);
-
-    function nextButton() {
-        history.push('/comments');
-    }
+    dispatch({
+        type: 'ADD_SUPPORT',
+        payload: support
+    });
+    history.push('/comments');
 
     return (
 
         <div>
-            <form onSubmit={(event) => nextButton(event)}>
+            <h1>How well are you being supported?</h1>
+            <h3>1 being the worst, 5 being the best</h3>
+            <form onSubmit={supportResponse}>
                 <select
                     name='Value'
-                    onChange={(event) => setValue(event.target.value)}>
+                    onChange={(event) => setSupport(event.target.value)}>
                     <option value={'1'}>1</option>
                     <option value={'2'}>2</option>
                     <option value={'3'}>3</option>
                     <option value={'4'}>4</option>
                     <option value={'5'}>5</option>
                 </select>
-                <button> Next </button>
+                <button type="submit">Next</button>
+
             </form >
         </div >
 

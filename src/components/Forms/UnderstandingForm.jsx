@@ -7,49 +7,37 @@ import '../App/App.css';
 function UnderstandingForm() {
     const dispatch = useDispatch();
     const history = useHistory();
-    const [value, setValue] = useState(0);
-    const form2 = useSelector(store => store.understandingReducer);
+    const [understand, setUnderstand] = useState(0);
+    const form1 = useSelector(store => store.feelingReducer);
 
-    function sendForm2() {
-        axios({
-            method: 'POST',
-            url: '/'
-        }).then(response => {
-            console.log(response.data);
-            dispatch({
-                type: 'SEND_FORM2',
-                payload: response.data
-            })
-
-        }).catch(error => {
-            console.log('error on POST', error);
-        });
+    const understandResponse = (event) => {
+        setUnderstand(event.target.value);
     }
+    // event.preventDefault();
 
-    useEffect(() => {
-        console.log('in useEffect');
-        sendForm2();
-    }, []);
-
-    function nextButton() {
-        history.push('/support');
-    }
-
+    dispatch({
+        type: 'ADD_UNDERSTAND',
+        payload: understand
+    });
+    history.push('/support');
 
     return (
 
         <div>
-            <form onSubmit={(event) => nextButton(event)}>
+            <h1>How well are you understanding the content?</h1>
+            <h3>1 being the worst, 5 being the best</h3>
+            <form onSubmit={understandResponse}>
                 <select
                     name='Value'
-                    onChange={(event) => setValue(event.target.value)}>
+                    onChange={(event) => setUnderstand(event.target.value)}>
                     <option value={'1'}>1</option>
                     <option value={'2'}>2</option>
                     <option value={'3'}>3</option>
                     <option value={'4'}>4</option>
                     <option value={'5'}>5</option>
                 </select>
-                <button> Next </button>
+                <button type="submit">Next</button>
+
             </form >
         </div >
 
