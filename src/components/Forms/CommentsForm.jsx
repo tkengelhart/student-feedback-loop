@@ -6,7 +6,7 @@ import '../App/App.css';
 function CommentsForm(props) {
     const dispatch = useDispatch();
     const history = useHistory();
-    const [comments, setComments] = useState();
+    const [comments, setComments] = useState('');
     const form1 = useSelector(store => store.commentsReducer);
 
     function commentsResponse(event) {
@@ -16,7 +16,7 @@ function CommentsForm(props) {
             type: 'ADD_COMMENTS',
             payload: comments,
         });
-
+        console.log('This is what was typed', comments);
         history.push('/review');
     }
 
@@ -30,7 +30,7 @@ function CommentsForm(props) {
                     name='Comments'
                     onChange={(event) => setComments(event.target.value)}>
                 </input>
-                <button >Next</button>
+                <button>Next</button>
 
                 <h2>Please press Next button to see a review of your feedback before submitting</h2>
 
