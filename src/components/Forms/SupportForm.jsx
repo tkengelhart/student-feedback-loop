@@ -21,7 +21,7 @@ function SupportForm(props) {
     }
     return (
 
-        <div>
+        <div className="form-box">
             <h1>How well are you being supported?</h1>
             <h3>1 being the worst, 5 being the best</h3>
             <form onSubmit={(event) => supportResponse(event)}>
@@ -34,6 +34,8 @@ function SupportForm(props) {
                     <option value={'4'}>4</option>
                     <option value={'5'}>5</option>
                 </select>
+                <br></br>
+                <br></br>
                 <button>Next</button>
 
             </form >

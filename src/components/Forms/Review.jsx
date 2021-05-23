@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { Button } from '@chakra-ui/button';
+import '../App/App.css';
 
 
 
@@ -50,11 +51,20 @@ function Review() {
 
     return (
         <div className="review">
-            <h2>Feeling: {feelingScore}</h2>
-            <h2>Understanding: {understandScore}</h2>
-            <h2>Support: {supportScore}</h2>
-            <h2>Comments:{commentsScore}</h2>
-            <button onClick={(event) => submitFeedback(event)}>Submit</button>
+            <h2>Review Your Feedback</h2>
+
+            <span>Feeling: </span><span className="right-justify">{feelingScore}</span>
+            <br></br>
+            <span>Understanding: </span><span className="right-justify">{understandScore}</span>
+            <br></br>
+            <span>Support: </span><span className="right-justify">{supportScore}</span>
+            <br></br>
+            <span>Comments: </span><span className="right-justify">{commentsScore}</span>
+            <br></br>
+            <br></br>
+            <br></br>
+
+            <button className="review-button" onClick={(event) => submitFeedback(event)}>Submit</button>
 
 
         </div>
@@ -66,3 +76,12 @@ function Review() {
 
 
 export default Review;
+
+
+//testing ways to create space
+{/* <div className="review">
+<h2>Feeling: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{feelingScore}</h2>
+<h2>Understanding: &nbsp;&nbsp;&nbsp;{understandScore}</h2>
+<h2>Support: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{supportScore}</h2>
+<h2>Comments: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{commentsScore}</h2>
+<button onClick={(event) => submitFeedback(event)}>Submit</button> */}

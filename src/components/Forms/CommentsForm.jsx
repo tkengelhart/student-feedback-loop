@@ -23,7 +23,7 @@ function CommentsForm(props) {
 
     return (
 
-        <div>
+        <div className="form-box">
             <h1>Any comments you want to leave?</h1>
             <form onSubmit={(event) => commentsResponse(event)}>
                 <input
@@ -31,9 +31,13 @@ function CommentsForm(props) {
                     name='Comments'
                     onChange={(event) => setComments(event.target.value)}>
                 </input>
+                <br></br>
+                <br></br>
+
+
+                <h2>Please press Next button to see a review of your feedback before submitting.</h2>
                 <button>Next</button>
 
-                <h2>Please press Next button to see a review of your feedback before submitting</h2>
 
             </form >
 

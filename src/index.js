@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App/App';
+// import { ChakraProvider } from '@chakra-ui/react';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
+// import { themeProvider } from "@chakra-ui/react";
 import registerServiceWorker from './registerServiceWorker';
+// import { ThemeProvider } from '@emotion/react';
 
 
 //just creating skeletons of what is needed
@@ -81,10 +84,12 @@ const storeInstance = createStore(
 
 
 ReactDOM.render(
+    // <ChakraProvider>
     <Provider store={storeInstance}>
         <App />
     </Provider>,
     document.getElementById('root')
+    // </ChakraProvider>
 );
 registerServiceWorker();
 

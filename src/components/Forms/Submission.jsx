@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom';
 
 function Submission() {
     return (
-        <div><h1>Successfully Submitted!</h1></div>
+        <div className="form-box"><h1>Successfully Submitted!</h1></div>
     )
 }
 

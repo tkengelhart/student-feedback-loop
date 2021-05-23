@@ -18,24 +18,24 @@ import { HashRouter as Router, Route, Switch, Link, NavLink } from 'react-router
 function App() {
 
   return (
-    <>
-      <Router>
-        <div>
-          <Header />
-          <hr />
-          <switch>
-            <Route exact path='/'><Home /></Route>
-            <Route path='/feelings'><FeelingForm /></Route>
-            <Route path='/understanding'><UnderstandingForm /></Route>
-            <Route path='/support'><SupportForm /></Route>
-            <Route path='/comments'><CommentsForm /></Route>
-            <Route path='/review'><Review /></Route>
-            <Route path='/submit'><Submission /></Route>
-          </switch>
 
-        </div>
-      </Router>
-    </>
+    <Router>
+      <div className="App" >
+        <Header />
+        <hr />
+        <Switch>
+          <Route exact path='/'><Home /></Route>
+          <Route path='/feelings'><FeelingForm /></Route>
+          <Route path='/understanding'><UnderstandingForm /></Route>
+          <Route path='/support'><SupportForm /></Route>
+          <Route path='/comments'><CommentsForm /></Route>
+          <Route path='/review'><Review /></Route>
+          <Route path='/submit'><Submission /></Route>
+        </Switch>
+
+      </div>
+    </Router>
+
   );
 }
 
