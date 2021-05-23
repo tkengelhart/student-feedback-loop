@@ -6,8 +6,26 @@ import { useHistory } from 'react-router-dom';
 
 
 function Submission() {
+    const history = useHistory();
+    const dispatch = useDispatch();
+
+
+
+    const newFeedback = (event) => {
+        dispatch({
+            type: 'RESET',
+        });
+        history.push('/')
+    }
     return (
-        <div className="form-box"><h1>Successfully Submitted!</h1></div>
+        <>
+            <div className="submit-box"><h1>⭐ Feedback submitted successfully ⭐ </h1></div>
+            <div className="submit-box">
+
+                <h1>Thank You!</h1>
+                <button onClick={(event) => newFeedback(event)}>Leave new feedback</button>
+            </div>
+        </>
     )
 }
 

@@ -29,6 +29,7 @@ function FeelingForm(props) {
             <h3>1 being the worst, 5 being the best</h3>
             <form onSubmit={(event) => feelingResponse(event)}>
                 <select
+                    required
                     onChange={(event) => setFeeling(event.target.value)}>
                     <option value={''}></option>
                     <option value={'1'}>1</option>

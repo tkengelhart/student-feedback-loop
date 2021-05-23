@@ -24,10 +24,13 @@ import registerServiceWorker from './registerServiceWorker';
 // }
 
 const feelingReducer = (state = 0, action) => {
-    if (action.type === 'ADD_FEELING') return action.payload;
-    return state;
-
+    if (action.type === 'ADD_FEELING')
+        return action.payload;
+    else if (action.type === 'RESET')
+        return state;
 }
+
+
 
 const understandReducer = (state = 0, action) => {
     if (action.type === 'ADD_UNDERSTAND') return action.payload;

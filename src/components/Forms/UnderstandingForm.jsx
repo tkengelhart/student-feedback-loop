@@ -27,8 +27,9 @@ function UnderstandingForm(props) {
             <h3>1 being the worst, 5 being the best</h3>
             <form onSubmit={(event) => understandResponse(event)}>
                 <select
+                    required
                     onChange={(event) => setUnderstand(event.target.value)}>
-                    <option value={''}></option>
+                    <option value={''} ></option>
                     <option value={'1'}>1</option>
                     <option value={'2'}>2</option>
                     <option value={'3'}>3</option>

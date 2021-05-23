@@ -6,7 +6,7 @@ function Home() {
     const [start, disableStart] = useState(false);
 
     function startButton() {
-        disableStart(true);
+        // disableStart(true);
 
         history.push('/feelings')
     }
@@ -14,7 +14,7 @@ function Home() {
     return (
         <>
             <div>
-                <h2>Please press start</h2><button onClick={(event) => startButton(event)}>START</button>
+                <h2>Press START to begin.</h2><button onClick={(event) => startButton(event)}>START</button>
             </div>
         </>
     )

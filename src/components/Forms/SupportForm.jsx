@@ -26,6 +26,7 @@ function SupportForm(props) {
             <h3>1 being the worst, 5 being the best</h3>
             <form onSubmit={(event) => supportResponse(event)}>
                 <select
+                    required
                     onChange={(event) => setSupport(event.target.value)}>
                     <option value={''}></option>
                     <option value={'1'}>1</option>
