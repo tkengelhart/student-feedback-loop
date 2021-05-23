@@ -1,6 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import '../App/App.css';
 
@@ -36,7 +35,6 @@ function FeelingForm(props) {
                     <option value={'3'}>3</option>
                     <option value={'4'}>4</option>
                     <option value={'5'}>5</option>
-
                 </select>
                 <button>Next</button>
 
