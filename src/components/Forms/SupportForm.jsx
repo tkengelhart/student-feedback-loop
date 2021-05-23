@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 import '../App/App.css';
 
 function SupportForm(props) {
+
+    //setup dispatch and use history
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -13,6 +15,8 @@ function SupportForm(props) {
     function supportResponse(event) {
         event.preventDefault();
 
+        //dispatch scores to reducer / store
+
         dispatch({
             type: 'ADD_SUPPORT',
             payload: support,
@@ -20,6 +24,8 @@ function SupportForm(props) {
         history.push('/comments');
     }
     return (
+
+        //setup form
 
         <div className="form-box">
             <h1>How well are you being supported?</h1>

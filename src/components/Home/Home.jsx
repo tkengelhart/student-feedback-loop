@@ -1,6 +1,9 @@
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 
+
+//create starting page with a start button
+
 function Home() {
     const history = useHistory();
     const [start, disableStart] = useState(false);

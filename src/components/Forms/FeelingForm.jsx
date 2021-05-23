@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import '../App/App.css';
 
 function FeelingForm(props) {
+    //need dispatch to send feeling score history to move to next page
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -12,6 +13,9 @@ function FeelingForm(props) {
 
     function feelingResponse(event) {
         event.preventDefault();
+
+
+        //dispatch scores to reducer / store
 
         dispatch({
             type: 'ADD_FEELING',
@@ -23,6 +27,8 @@ function FeelingForm(props) {
     }
 
     return (
+
+        // form to submit scores
 
         <div className="form-box">
             <h1>How are you feeling today?</h1>

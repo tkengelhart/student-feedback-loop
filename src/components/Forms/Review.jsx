@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Button } from '@chakra-ui/button';
 import '../App/App.css';
 
-
+//review box that shows a review of what was entered.
 
 function Review() {
     const form1 = useSelector(store => store.submissionReducer);
@@ -27,6 +27,7 @@ function Review() {
     const submitFeedback = () => {
         console.log('Posting Feedback');
 
+        //post scores to database
         axios({
             method: 'POST',
             url: '/',

@@ -6,11 +6,14 @@ import { useHistory } from 'react-router-dom';
 
 
 function Submission() {
+
+    //use history to move to new page
+    //dispatch if we want to dispatch to submit object
     const history = useHistory();
     const dispatch = useDispatch();
 
 
-
+    //dispatch a reset to start feedback form over.
     const newFeedback = (event) => {
         dispatch({
             type: 'RESET',
@@ -18,6 +21,7 @@ function Submission() {
         history.push('/')
     }
     return (
+        //show feedback submitted and a thank you ...reset or start again
         <>
             <div className="submit-box"><h1>⭐ Feedback submitted successfully ⭐ </h1></div>
             <div className="submit-box">

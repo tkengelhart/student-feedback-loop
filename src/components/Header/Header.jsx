@@ -1,4 +1,7 @@
 function Header() {
+
+    //create header that appears on every page
+
     return (
         <>
             <header className='App-header'>
