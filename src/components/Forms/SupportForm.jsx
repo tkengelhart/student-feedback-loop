@@ -6,15 +6,16 @@ import '../App/App.css';
 function SupportForm(props) {
     const dispatch = useDispatch();
     const history = useHistory();
+
     const [support, setSupport] = useState(0);
-    const form1 = useSelector(store => store.feelingReducer);
+    const form1 = useSelector(store => store.supportReducer);
 
     function supportResponse(event) {
         event.preventDefault();
 
         dispatch({
             type: 'ADD_SUPPORT',
-            payload: support
+            payload: support,
         });
         history.push('/comments');
     }
@@ -26,6 +27,7 @@ function SupportForm(props) {
             <form onSubmit={(event) => supportResponse(event)}>
                 <select
                     onChange={(event) => setSupport(event.target.value)}>
+                    <option value={''}></option>
                     <option value={'1'}>1</option>
                     <option value={'2'}>2</option>
                     <option value={'3'}>3</option>

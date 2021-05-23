@@ -6,15 +6,15 @@ import '../App/App.css';
 function CommentsForm(props) {
     const dispatch = useDispatch();
     const history = useHistory();
-    const [comments, setComments] = useState(0);
-    const form1 = useSelector(store => store.feelingReducer);
+    const [comments, setComments] = useState();
+    const form1 = useSelector(store => store.commentsReducer);
 
     function commentsResponse(event) {
         event.preventDefault();
 
         dispatch({
             type: 'ADD_COMMENTS',
-            payload: comments
+            payload: comments,
         });
 
         history.push('/review');
@@ -26,7 +26,7 @@ function CommentsForm(props) {
             <h1>Any comments you want to leave?</h1>
             <form onSubmit={(event) => commentsResponse(event)}>
                 <input
-                    type='text'
+                    type="text"
                     name='Comments'
                     onChange={(event) => setComments(event.target.value)}>
                 </input>

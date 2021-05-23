@@ -35,16 +35,15 @@ const understandReducer = (state = 0, action) => {
     }
     return newState;
 }
-
 const supportReducer = (state = 0, action) => {
     let newState = state;
     if (action.type === 'ADD_SUPPORT') {
-        let newState = action.payload;
+        newState = action.payload;
     }
     return newState;
 }
 
-const commentReducer = (state = '', action) => {
+const commentsReducer = (state = '', action) => {
     let newState = state;
     if (action.type === 'ADD_COMMENTS') {
         let newState = action.payload;
@@ -73,7 +72,7 @@ const storeInstance = createStore(
         feelingReducer,
         understandReducer,
         supportReducer,
-        commentReducer,
+        commentsReducer,
         // reviewReducer,
         // submissionReducer
     }),

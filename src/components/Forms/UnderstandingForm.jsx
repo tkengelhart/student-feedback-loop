@@ -8,7 +8,7 @@ function UnderstandingForm(props) {
     const history = useHistory();
 
     const [understand, setUnderstand] = useState(0);
-    const form1 = useSelector(store => store.feelingReducer);
+    const form1 = useSelector(store => store.understandingReducer);
 
     function understandResponse(event) {
         event.preventDefault();
@@ -28,6 +28,7 @@ function UnderstandingForm(props) {
             <form onSubmit={(event) => understandResponse(event)}>
                 <select
                     onChange={(event) => setUnderstand(event.target.value)}>
+                    <option value={''}></option>
                     <option value={'1'}>1</option>
                     <option value={'2'}>2</option>
                     <option value={'3'}>3</option>
